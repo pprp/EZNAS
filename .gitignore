@@ -133,3 +133,12 @@ dmypy.json
 
 # Pycharm
 .idea
+EZNAS/cifardata/*
+*.out 
+
+EZNAS/dataset_generator/*
+EZNAS/nds_data/*
+EZNAS/pycls/*
+EZNAS/models/*
+EZNAS/config_utils/*
+EZNAS/nas_101_api/*

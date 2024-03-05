@@ -151,6 +151,6 @@ def get_args():
 
     parser.add_argument('--dataset', default='cifar10', choices=['cifar10', 'cifar100', 'ImageNet16-120', 'ImageNet'], type=str, help='Data-set to be used')
     parser.add_argument('--search_space', default='NASBench201', choices=['NASBench201', 'NATSBench', 'NDS'], type=str, help='Search space')
-    parser.add_argument('--nds_space', default='', choices=['nds_amoeba', 'nds_darts', 'nds_enas', 'nds_pnas', 'nds_nasnet'], type=str, help='NDS space specification')
+    parser.add_argument('--nds_space', default='', choices=['nds_amoeba', 'nds_darts', 'nds_enas', 'nds_pnas', 'nds_nasnet', ""], type=str, help='NDS space specification')
     args = parser.parse_args()
     return args

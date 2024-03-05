@@ -13,6 +13,7 @@ JOB_NAME=$2
 TMP_SLURM_SCRIPT="tmp_${JOB_NAME}.slurm"
 
 cat > $TMP_SLURM_SCRIPT <<EOL
+
 #!/bin/bash
 #SBATCH -J $JOB_NAME
 #SBATCH -o /home/ya255/projects/Hardware-Aware-Automated-Machine-Learning/EZNASV/slurm_logs/${JOB_NAME}_%j.out

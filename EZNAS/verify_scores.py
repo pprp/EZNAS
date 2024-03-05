@@ -49,11 +49,11 @@ eval_on_sets = ["darts"]
 nets_score_set = {x: [] for x in eval_on_sets}
 nets_test_acc_set = {x: [] for x in eval_on_sets}
 
-if args.nds_space == "":
+if args.nds_space == "": # NASBench201
     NUM_NETS = 15625
 elif args.search_space == "NATSBench":
     NUM_NETS = 32768
-else:
+else: # NDS
     NUM_NETS = 4000
 
 nnetz_sam = list(range(NUM_NETS))[::-1]
@@ -82,13 +82,13 @@ train_loader = get_eznas_trainloader(batch_size, dataset)
 network_sampler = get_search_space(args)
 if search_space == "NATSBench":
     api = create(
-        os.environ['PROJ_HOME'] + "dataset_generator/NATS-sss-v1_0-50262.pickle.pbz2",
+        os.environ['PROJ_HOME'] + "/dataset_generator/NATS-sss-v1_0-50262.pickle.pbz2",
         "sss",
         fast_mode=False,
         verbose=True,
     )
 elif search_space == "NASBench201":
-    NASBENCH_TFRECORD = os.environ['PROJ_HOME'] + "dataset_generator/NAS-Bench-201-v1_1-096897.pth"
+    NASBENCH_TFRECORD = os.environ['PROJ_HOME'] + "/dataset_generator/NAS-Bench-201-v1_1-096897.pth"
     api = API(NASBENCH_TFRECORD, verbose=False)
 else:
     api = None

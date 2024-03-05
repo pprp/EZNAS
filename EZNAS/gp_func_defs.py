@@ -34,7 +34,7 @@ static addr: [wt, wtgraddata, wtgradnoise, wtgraddataperturb,
 '''
 
 with open("evol_config.yaml", "r") as f:
-    config = yaml.load(f)
+    config = yaml.load(f, Loader=yaml.Loader)
 
 rangemix=config['rangemix']
 LEN_IND_ADDR = config['LEN_IND_ADDR']

@@ -542,7 +542,7 @@ def initialize_network(search_space, i_reg, network_sampler, api, dataset):
         except:
             if dataset == 'cifar10':
                 acc_results = api.get_more_info(i_reg, 'cifar10-valid', None,
-                                                        use_12epochs_result=False,
+                                                        # use_12epochs_result=False,
                                                         is_random=False)['valid-accuracy'] 
                 val_acc = acc_results
             else:
